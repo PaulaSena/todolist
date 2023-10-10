@@ -1,4 +1,4 @@
-# TODOLIST
+# Lista de a fazeres
 Uma aplicação de To-Do List em Java com Spring Boot
 # Curso de Java Rocketseat
 
@@ -16,22 +16,30 @@ Uma aplicação de To-Do List em Java com Spring Boot
 
 Grup é o nominio da empresa podendo ser ao contrario ex br.com.agwat
 
-P**roject** [Maven](https://start.spring.io/)
-**Language** [Java](https://start.spring.io/)
-**Spring Boot** [3.0.11](https://start.spring.io/)
-**Project Metadata**
-**Group: br.com.agwat**
-**Artifact: todolist**
-**Name: todolist**
-**Description: Project for Spring Boot of Rocketseat - Gerenciador de Tarefas**
-**Package name:  br.com.agwat.todolist**
-**Packaging**
+## **Project** Maven
+
+**Language** Java
+
+**Spring Boot** 3.0.11
+
+
+## **Project Metadata**
+
+**Group:** br.com.agwat
+
+**Artifact:** todolist
+
+**Name:** todolist
+
+**Description:** Project for Spring Boot of Rocketseat - Gerenciador de Tarefas
+
+**Package name:**  br.com.wat.todolist
+
+**Packaging:** Jar ou War
 
 [Jar](https://start.spring.io/) (gerao arquivo executavel sem precisar de servidor so com o JAVA)
 [War](https://start.spring.io/)(utilizado em aplicações WEB por contêiner e servidores para execultar com:Jbos, Tonkit, Toncat, arkfly
 
-**Java** [17](https://start.spring.io/)
-
-No springboot tem um servidor embarcado
+# **Java 17**
 
 ![Untitled](https://github.com/PaulaSena/todolist/assets/45314696/e8da2f4f-45cd-4691-9963-cc32267197e3)
