@@ -8,9 +8,9 @@ Uma aplicação de To-Do List em Java com Spring Boot
 
 
 ![Java](https://img.shields.io/badge/Java-000?style=for-the-badge&logo=java&logoColor=c456ce) 
-![Maven](https://img.shields.io/badge/Maven-000?style=for-the-badge&logo=html5&logoColor=c456ce)
-![VSCode](https://img.shields.io/badge/VSCode-000?style=for-the-badge&logo=css3&logoColor=c456ce)
-![Rest Client](https://img.shields.io/badge/RestClient-000?style=for-the-badge&logo=javascript&logoColor=c456ce)
+![Maven](https://img.shields.io/badge/Maven-000?style=for-the-badge&logo=maven&logoColor=c456ce)
+![VSCode](https://img.shields.io/badge/VSCode-000?style=for-the-badge&logo=vscode&logoColor=c456ce)
+![Rest Client](https://img.shields.io/badge/RestClient-000?style=for-the-badge&logo=restclient&logoColor=c456ce)
 
 [https://start.spring.io/](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.1.4&packaging=jar&jvmVersion=17&groupId=com.javarocketseat&artifactId=rocketseat&name=rocketseat&description=Project%20for%20Spring%20Boot%20of%20rocketseat&packageName=com.javarocketseat.rocketseat&dependencies=devtools)
 
