@@ -4,13 +4,17 @@ Uma aplicação de To-Do List em Java com Spring Boot
 
 ⚠️ Recomendação: Ao criar o seu projeto no [Spring Initializr](https://start.spring.io/), adicione a dependência `Spring Boot DevTools`, para habilitar o live reload da aplicação.
 
-### Configuração de ambiente
+### Ferramentas
 
 
 ![Java](https://img.shields.io/badge/Java-000?style=for-the-badge&logo=java&logoColor=c456ce) 
+
 ![Maven](https://img.shields.io/badge/Maven-000?style=for-the-badge&logo=maven&logoColor=c456ce)
+
 ![VSCode](https://img.shields.io/badge/VSCode-000?style=for-the-badge&logo=vscode&logoColor=c456ce)
-![Rest Client](https://img.shields.io/badge/RestClient-000?style=for-the-badge&logo=restclient&logoColor=c456ce)
+
+![Rest Client](https://img.shields.io/badge/RestClient-000?style=for-the-badge&logo=restclient&logoColor=c456ce)   ![API Dog](https://img.shields.io/badge/APIDog-000?style=for-the-badge&logo=apidog&logoColor=c456ce) ![Insomnia](https://img.shields.io/badge/Insomnia-000?style=for-the-badge&logo=insomnia&logoColor=c456ce) ![Postman](https://img.shields.io/badge/Postman-000?style=for-the-badge&logo=postman&logoColor=c456ce) 
+
 
 [https://start.spring.io/](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.1.4&packaging=jar&jvmVersion=17&groupId=com.javarocketseat&artifactId=rocketseat&name=rocketseat&description=Project%20for%20Spring%20Boot%20of%20rocketseat&packageName=com.javarocketseat.rocketseat&dependencies=devtools)
 
