@@ -6,7 +6,8 @@ public class UserModel {
    private String username;
    private String name;
    private String passwordString;
-
+   
+//gets seter
    public void setUsername(String username) {
       this.username = username;
    }
