@@ -14,7 +14,7 @@ import lombok.Data;
 //classe modelo de usuário UserController.
 //gets seter 
 
-@Data
+@Data //facilita a manipulação de dados criando getters e setters para todos os atributos da classe
 @Entity(name = "td_users")
 public class UserModel {
 
