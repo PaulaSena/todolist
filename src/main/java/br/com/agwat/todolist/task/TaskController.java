@@ -33,6 +33,8 @@ public class TaskController {
 
 
 public TaskModel create(@RequestBody TaskModel taskModel){
+    System.out.println("Chegou no Controler Task!!");
+
     var taskCreated =this.taskRepository.save(taskModel);
     return taskCreated;
 
