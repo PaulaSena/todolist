@@ -3,11 +3,11 @@ package br.com.agwat.todolist.filter;
 import java.io.IOException;
 import java.util.Base64;
 
-import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+import at.favre.lib.crypto.bcrypt.BCrypt;
 import br.com.agwat.todolist.user.IUserRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -24,48 +24,59 @@ public class FilterTaskAuth extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
 
-        /* Pegar a autenticação(usuário e senha) */ 
+        // Validar se rota é tasks
+        var servletPath = request.getServletPath();
+
+        if (servletPath.equals("/tasks")) {
+
+            /* Pegar a autenticação(usuário e senha) */
             // pegar parte de um conteudo
             // Authorization.substring(5).trim(); //
             // pegando so a senha YW5hcGF1bGFzZW5hOjEyMzQ1
-        var Authorization = request.getHeader("Authorization");
+            var Authorization = request.getHeader("Authorization");
 
-        var authEncoded = Authorization.substring("Basic".length()).trim();
+            var authEncoded = Authorization.substring("Basic".length()).trim();
             // System.out.println("Authorization");
             // System.out.println(user_password);
 
-        byte[] authDecode = Base64.getDecoder().decode(authEncoded);
+            byte[] authDecode = Base64.getDecoder().decode(authEncoded);
             // System.out.println("Authorization");
             // System.out.println(authDecode);
-        var authString = new String(authDecode);
+            var authString = new String(authDecode);
             // System.out.println("Authorization");
             // System.out.println(authString);
 
             // cria um array apartir do Split ["anapaula","123"]
-        String [] credentials = authString.split(":");
-        String username = credentials[0];
-        String passwordString = credentials[1];
-        System.out.println("Authorization");
+            String[] credentials = authString.split(":");
+            String username = credentials[0];
+            String passwordString = credentials[1];
+            System.out.println("Authorization");
 
-        System.out.println(username);
-        System.out.println(passwordString);
+            System.out.println(username);
+            System.out.println(passwordString);
 
-        /* Validar Usuário */
-        var user = this.userRepository.findByUsername(username);
-        if(user == null){
-            response.sendError(401, "Usuário sem autorização!");
+            /* Validar Usuário */
+            var user = this.userRepository.findByUsername(username);
+            if (user == null) {
+                response.sendError(401);// ou 403 "Usuário sem autorização!"
+            } else {
+                /* Validar Senha */
+                // para usar o verify precisa converser a senha para array
+                // verify(passwordString,user.getPasswordString());
+                var passwordVerify = BCrypt.verifyer().verify(passwordString.toCharArray(), user.getPasswordString());
+                if (passwordVerify.verified) { 
+                    filterChain.doFilter(request, response);
+                } else {
+                    response.sendError(401); 
+                }
+                /* Segue viagem */
+            }
 
-        /* Validar Senha  */
-        /* Segue viagem  */
-
-        filterChain.doFilter(request, response);
-
-
-
+        } else {
+            filterChain.doFilter(request, response);
         }
 
     }
-
     /*
      * troca de implements filter para extends OncePerRequestFilter
      * public class FilterTaskAuth implements Filter {
