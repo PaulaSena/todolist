@@ -12,10 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
 
-@RestController
-@RequestMapping("/users")
-
-public class UserController {
     /**
      * String (texto)
      * Integer (int) Números Inteiros
@@ -36,6 +32,12 @@ public class UserController {
      * Crio uma variavel privada e Chamo a interface.
      * Criar variavel para salvar dados da model e carregar o banco
      * **/
+
+
+@RestController
+@RequestMapping("/users")
+
+public class UserController {
 
      @Autowired
      private IUserRepository userRepository;

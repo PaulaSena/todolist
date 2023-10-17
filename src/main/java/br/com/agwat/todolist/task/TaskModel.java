@@ -23,8 +23,8 @@ import lombok.Data;
      * Prioridade
      * 
      * **/
-//facilita a manipulação de dados criando getters e setters para todos os atributos da classe
-@Data 
+
+@Data //facilita a manipulação de dados criando getters e setters para todos os atributos da classe
 @Entity (name = "td_tasks") // Nome da tabela
 public class TaskModel {
     
