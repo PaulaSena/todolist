@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.servlet.http.HttpServletRequest;
+
 // @controller é usado quando precisa de uma flexibilidade maior.
 // @RestControlle é usado para realizar uma API
 // @Controller componente camada da requisição com as demais camadas Model e BDD
@@ -29,8 +31,9 @@ public class TaskController {
 
     @PostMapping("/")
 
-    public TaskModel create(@RequestBody TaskModel taskModel) {
-        System.out.println("Chegou no Controler Task!!");
+    public TaskModel create(@RequestBody TaskModel taskModel, HttpServletRequest request) {
+        /* Setar o atributo e idUser do FilteTaskAut e Recuperar na TaskController com HttpServletRequest */
+        System.out.println("Chegou no Controler Task!!" + request.getAttribute("idUser"));
 
         var taskCreated = this.taskRepository.save(taskModel);
         return taskCreated;

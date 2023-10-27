@@ -65,11 +65,13 @@ public class FilterTaskAuth extends OncePerRequestFilter {
                 // verify(passwordString,user.getPasswordString());
                 var passwordVerify = BCrypt.verifyer().verify(passwordString.toCharArray(), user.getPasswordString());
                 if (passwordVerify.verified) { 
+                    /* Segue viagem */  
+                                        /* Setar o atributo e idUser do FilteTaskAut e Recuperar na TaskController com HttpServletRequest */
+                    request.setAttribute("idUser", user.getId() );
                     filterChain.doFilter(request, response);
                 } else {
                     response.sendError(401); 
                 }
-                /* Segue viagem */
             }
 
         } else {
